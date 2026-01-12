@@ -18,6 +18,9 @@ import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
 
 import App from './App.tsx'
+import Login from './pages/login.tsx'
+import Register from './pages/register.tsx'
+
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -35,8 +38,24 @@ const indexRoute = createRoute({
   component: App,
 })
 
+const loginRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/login',
+  component: Login,
+})
+
+const registerRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/register',
+  component: Register,
+})
+
+
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
+  loginRoute,
+  registerRoute,
   TanStackQueryDemo(rootRoute),
 ])
 

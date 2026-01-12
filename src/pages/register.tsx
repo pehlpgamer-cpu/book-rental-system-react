@@ -1,51 +1,34 @@
-import '../../css/register.css'
-import React from 'react'
+import '../css/register.css'
 import { useState } from 'react'
-import { Head, useForm , Link} from '@inertiajs/react'
 
-//ICONS
-import { FaCircleXmark, FaCircleCheck } from "react-icons/fa6";
+
+// ICONS
+import { 
+  FaCircleCheck, 
+  FaCircleXmark 
+} from "react-icons/fa6";
 
 export default function register() {
   const [passwordVisibility, setPasswordVisibility] = useState<string>('password');
   const [confirmPasswordVisibility, setConfirmPasswordVisibility] = useState<string>('password'); 
 
-  const [passwordErrors, setPasswordErrors] = useState(null);
   
-  const [ data, setData, post, processing, setError, errors] = useForm({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    agreedWithTermsAndConditions: false,
-  });
-
+  
+  
   // TODO input validation: low priority
 
-  function validatePassword()
-  {
-    let isAllInputValid = true as boolean;
-
-    let validMaxPassLen = false as boolean;
-    let validMaxPassLen = false as boolean;
-    
-    
-  }
 
 
 
   function handleSubmit(e: React.FormEvent)
   {
     e.preventDefault();
-    let isAllInputValid = true as boolean;
+    
 
   }
 
   return (
     <>
-      <Head>
-        
-      </Head>
       <div className='w-screen h-screen flex flex-col justify-center items-center'>
         <h1>Register</h1>
         <form className='p-4 border rounded-xl flex flex-col justify-center'>
@@ -65,7 +48,7 @@ export default function register() {
           </span>
 
           <section className='mt-1 border rounded-lg p-1.5'>
-            <span>
+            <span className='flex flex-col'>
               <label className='text-green-500'>Minimum password characters is 8</label>
               <label className='text-green-500'>Maximum password characters is 8</label>
             </span>
@@ -87,7 +70,7 @@ export default function register() {
           <button className='border p-4 mt-6 rounded-4xl 
           hover:font-extrabold hover:rounded-xl hover:scale-y-120 
           duration-600 ease-in-out'>Register</button>
-          <Link href='/login' className='mt-2 self-center underline hover:font-semibold'>Login with an existing account?</Link>          
+          <button className='mt-2 self-center underline hover:font-semibold'>Login with an existing account?</button>          
         </form>
       </div>
     </>

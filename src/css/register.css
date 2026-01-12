@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+
+.inputTxtbox {
+    @apply p-1.5 border rounded-l-md
+}
