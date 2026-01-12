@@ -8,7 +8,7 @@ import {
   createRouter,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import TanStackQueryDemo from './routes/demo.tanstack-query.tsx'
+import TanStackQueryDemo from './routes/demo/tanstack-query.tsx'
 
 import Header from './components/Header'
 
